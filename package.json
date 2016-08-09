@@ -9,6 +9,7 @@
     "ed25519": "git://github.com/KhaosT/ed25519",
     "mdns": "^2.3.2",
     "node-persist": "^0.0.8",
+    "particle-api-js": "*",
     "srp": "git://github.com/KhaosT/node-srp"
   },
   "devDependencies": {
