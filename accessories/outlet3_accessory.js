@@ -7,7 +7,7 @@ var Particle 		= require('particle-api-js');
 var colors			= require("colors");
 var loginInfo 		= require("../credentials.json");
 
-var outletNum = "1";
+var outletNum = "3";
 
 // Login to Particle using stored credentials
 var particle = new Particle();
