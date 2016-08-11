@@ -67,7 +67,7 @@ var OUTLET_CLASS = {
 
 // Create outlet accessory with unique identifier 
 var outletUUID = uuid.generate('hap-nodejs:accessories:outlet');
-var outlet = exports.accessory = new Accessory('Outlet Module Plug ' + outletNum, outletUUID);
+var outlet = exports.accessory = new Accessory('Outlet ' + outletNum, outletUUID);
 
 outlet.username = "1A:2B:3C:4D:5E:F" + outletNum;
 outlet.pincode = "111-11-111";
@@ -77,7 +77,7 @@ outlet
 	.getService(Service.AccessoryInformation)
 	.setCharacteristic(Characteristic.Manufacturer, "Connor Mason")
 	.setCharacteristic(Characteristic.Model, "Rev-2")
-	.setCharacteristic(Characteristic.SerialNumber, "CONNOR-OUTLET-001");
+	.setCharacteristic(Characteristic.SerialNumber, "CONNOR-OUTLET-00" + outletNum);
 
 // Create indentify event
 outlet.on('identify', function(paired, callback) {
