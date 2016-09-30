@@ -1,6 +1,6 @@
 #include <string>
 
-int relays[] = {D2, D3, D4, D7};
+int relays[] = {D3, D4, D5, D6};
 
 // Expose function
 bool successOn = Particle.function("turnOn", turnOn);
@@ -24,14 +24,14 @@ int selectRelay(String relayString) {
 // Turn on inputted relay
 int turnOn(String relay) {
 	int relayNum = selectRelay(relay);
-	digitalWrite(relayNum, HIGH);
+	digitalWrite(relayNum, LOW);
 	return relayNum;
 }
 
 // Turn off inputted relay
 int turnOff(String relay) {
 	int relayNum = selectRelay(relay);
-	digitalWrite(relayNum, LOW);
+	digitalWrite(relayNum, HIGH);
 	return relayNum;
 }
 
@@ -39,6 +39,7 @@ void setup() {
 	// Set all relay pins as outputs
 	for (unsigned int i = 0; i < sizeof(relays); ++i) {
 		pinMode(relays[i], OUTPUT);
+		digitalWrite(relays[i], HIGH);
 	}
 }
 
